@@ -1,0 +1,55 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+	margin:0;
+	padding:0;
+}
+	.layout{
+		width: auto;
+		margin: 0 auto;
+	}
+	.main-header{
+		height:100px;
+		width:100%;
+		font-family: 'Oxygen', sans-serif;
+font-family: 'Cabin', sans-serif;
+		
+	}
+	.main-header .row .site-logo{
+		
+		
+		height:100px;
+
+	}
+	.main-header-right .main-header-right-top{
+		height:70px;
+
+		
+	}
+	.main-header-right .main-header-right-bottom{
+		height:70px;
+		
+	}
+	.main-header-right .main-header-right-top .user-menu ul li{
+		float:right;
+		list-style: none;
+		padding-right: 20px;
+		box-sizing: border-box;
+	}
+	.main-header-right .main-header-right-top .contact{
+		position:relative;
+		top:30px;
+		left:50px;
+	}
+	 .main-header-right-bottom .input-group {
+	 	height:45px;
+	 	width:700px;
+	 }
+	
+
+
+	.navbar{
+		padding:5px;
+		background:#808000;
+	}
