@@ -1,3 +1,36 @@
+<style type="text/css">
+    .items{
+        background: transparent;
+        padding:10px;
+        
+
+
+    }
+    .items:hover{
+        border:1px solid grey;
+        box-shadow: 0 4px 8px 0 rgba(0 , 0 , 0 , 0.2),  0 6px 20px 0 rgba(0 , 0 , 0 , 0.19);
+        background: #434444; 
+    }
+    .image {
+        height: 200px;
+        width:220px;
+        
+    }
+   
+    .product_name{
+        height:30px;
+        width:220px;
+        background: aqua;
+        text-align: center;
+    }
+    .product_price{
+        height:30px;
+        width:220px;
+        background: blue;
+        text-align: center;
+
+    }
+</style>
 <div class="container-fluid">
     <div class="row"> 
         <div class="col-sm-3">
@@ -6,8 +39,14 @@
         <div class="col-sm-9">
             <div class="row">
                 <% @products.each do |p| %>
-                <div class="col-sm-3">
-                    <%= image_tag p.avatar %>
+                <div class="col-sm-3 items">
+                  
+                    <%= image_tag p.avatar , class: "image" %>
+                    <div class="product_name">
+                        <%= p.product_name %>
+                    </div>
+                    <div class="product_price">
+                    </div>
                 </div>
                 <% end %>
                 
