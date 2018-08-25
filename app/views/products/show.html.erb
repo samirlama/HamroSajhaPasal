@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.product-avatar{
+		height:400px;
+		width:400px;
+		
+	}
+	.product-image{
+		border:1px solid black;
+	}
+	.fa-star{
+		font-size:20px;
+	}
+	.review{
+		border-right: 1px solid grey;
+		border-left: 1px solid grey;
+		font-size: 20px;
+		color:#grey;
+	}
+	.checked
+	{
+		color:orange;
+	}
+	
+</style>
+<body>
+	<div class="container product_item">
+		<div class="row">
+			<div class="col-sm-5 product-image">
+				<%= image_tag  @product.avatar , class: "product-avatar"%>
+			</div>
+			<div class="col-sm-7 product-additional">
+				<h2><%= @product.product_name %><h2>
+				<ul class="list-inline">
+  					<li class="list-inline-item">
+  						<span class="fa fa-star" data-id="1"></span>
+						<span class="fa fa-star" data-id="2"></span>
+						<span class="fa fa-star" data-id="3"></span>
+						<span class="fa fa-star" data-id="4"></span>
+						<span class="fa fa-star" data-id="5"></span>
+  					</li>
+  					<li class="list-inline-item review">Write a Review </li>
+  					<li class="list-inline-item"> </li>
+				</ul>	
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="description">
+					<h2> DESCRIPTION </h2>
+					<%= @product.description.html_safe %>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		 var star = $(".fa-star");
+		 var star_length = star.length;
+		 console.log(star_length);
+		 star.on('click' , function(){
+		 	console.log($(this).data("id"));
+		 	for(let i = 0; i < $(this).data("id"); i++){
+		 		star.eq(i).addClass("checked");
+		 	}
+		 	for(let i=$(this).data("id"); i< star_length;i++){
+		 		star.eq(i).removeClass("checked");
+		 	}
+		 	
+		 });
+	});
+</script>
